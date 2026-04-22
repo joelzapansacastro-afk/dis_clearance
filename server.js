@@ -11,6 +11,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
+// ✅ ROOT ROUTE (important for Render)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'home.html'));
+});
+
 // CONNECT TO MONGODB
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("MongoDB Connected"))
@@ -219,6 +224,17 @@ app.put('/teachers/:id', async (req, res) => {
   }
 });
 
+/*
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);
+});
+*/
+
+// ======================= SERVER =======================
+
+// ✅ CRITICAL FIX FOR RENDER
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
 });
