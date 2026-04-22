@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/students";
+const API = "https://dis-clearance.onrender.com/students";
 
 // SEARCH STUDENTS
 async function searchStudent() {

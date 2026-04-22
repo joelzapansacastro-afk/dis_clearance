@@ -173,7 +173,7 @@ async function login() {
   const password = document.getElementById("password").value.trim();
 
   try {
-    const res = await fetch("http://localhost:5000/teachers/login", {
+    const res = await fetch("https://dis-clearance.onrender.com/teachers/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ teachersname, password })

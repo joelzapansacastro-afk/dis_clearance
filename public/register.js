@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/students";
+const API = "https://dis-clearance.onrender.com/students";
 
 // ADD SUBJECT FIELD
 function addSubject(subject = "", teacher = "") {
@@ -231,7 +231,7 @@ async function handleExcelUpload() {
     try {
       document.getElementById("excelStatus").innerText = "Uploading...";
 
-      await fetch("http://localhost:5000/students/bulk", {
+      await fetch("https://dis-clearance.onrender.com/students/bulk", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ students })
