@@ -396,7 +396,7 @@ async function loadByGrade(grade) {
 
         const row = `
           <tr>
-            <td>${student.studentname} ${student.studentlname}</td>
+            <td>${student.studentlname}, ${student.studentname} </td>
             <td>${student.gradelevel}</td>
             <td>${sub.subject}</td>
             <td>${sub.teacher}</td>
