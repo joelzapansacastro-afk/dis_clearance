@@ -373,11 +373,21 @@ async function loadByGrade(grade) {
 
   const table = document.getElementById("studentTable");
   table.innerHTML = "";
-
+/*
   data
     .filter(student => student.gradelevel === grade)
     .forEach(student => {
+*/
+  data
+    .filter(student => student.gradelevel === grade)
+    .sort((a, b) => {
+      const nameA = a.studentlname.toLowerCase();
+      const nameB = b.studentlname.toLowerCase();
+      return nameA.localeCompare(nameB);
+    })
+    .forEach(student => {
 
+  
       (student.subjects || []).forEach(sub => {
 
         if ((sub.teacher || "").trim().toUpperCase() !== (teacher || "").trim().toUpperCase()) return;
